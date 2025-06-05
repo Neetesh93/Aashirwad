@@ -1,0 +1,244 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fefefe;
+  color: #2c2c2c;
+  transition: background 0.5s ease;
+}
+
+/* Typography & Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+h1, h2 {
+  color: #d4af37;
+  margin-bottom: 1.2rem;
+}
+
+/* Navbar */
+.navbar {
+  background: #fffefc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #3498db;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #d4af37;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #fffdf7, #fcf6e3);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* Button */
+.btn {
+  background: linear-gradient(to right, #d4af37, #f8c948);
+  color: #222;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #ffffff;
+  animation: slideFadeIn 1s ease forwards;
+}
+
+/* Cards & Images */
+.card, .room-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.card img, .room-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.card:hover, .room-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-items, .room-cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+}
+
+/* Testimonials */
+.testimonial-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.testimonial {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.testimonial.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Contact Section */
+.contact {
+  background: #fff8ec;
+}
+
+.whatsapp-btn {
+  margin-top: 1rem;
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Footer */
+footer {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Sticky WhatsApp Icon */
+.sticky-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.sticky-whatsapp img {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 10px #25D366);
+  transition: transform 0.3s ease;
+}
+
+.sticky-whatsapp:hover img {
+  transform: scale(1.1);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fffefc;
+    position: absolute;
+    top: 65px;
+    right: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Animations */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
